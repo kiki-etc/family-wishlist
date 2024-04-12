@@ -10,7 +10,7 @@
 
 body {
     width: 100%;
-    background: #1C402E;
+    background: #753900;
 }
 
 .parent {
@@ -85,7 +85,7 @@ body {
 
 .form a {
     font-size: 16px;
-    color: #1C402E;
+    color: #753900;
     text-decoration: none;
 }
 
@@ -95,7 +95,7 @@ body {
 
 .form input.button {
     color: #fff;
-    background: #1C402E;
+    background: #753900;
     font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: 1px;
@@ -105,7 +105,7 @@ body {
 }
 
 .form input.button:hover {
-    background: #1C402E;
+    background: #753900;
 }
 
 .signup {
@@ -114,7 +114,7 @@ body {
 }
 
 .signup label {
-    color: #1C402E;
+    color: #753900;
     cursor: pointer;
 }
 
