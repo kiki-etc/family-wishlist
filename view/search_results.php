@@ -42,39 +42,39 @@ include "../settings/core.php"?>
         position: absolute;
         right: 0;
     }
- #sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 100%;
-    background-color: #fff;
-    transition: left 0.3s ease;
-    z-index: 1000; 
-}
+    #sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        background-color: #fff;
+        transition: left 0.3s ease;
+        z-index: 1000; 
+    }
 
-#sidebarToggle {
-    position: fixed;
-    top: 10px;
-    z-index: 1001; 
-}
+    #sidebarToggle {
+        position: fixed;
+        top: 10px;
+        z-index: 1001; 
+    }
 
-.side-menu li {
-    margin-bottom: 10px;
-    margin-top: 10px;
+    .side-menu li {
+        margin-bottom: 10px;
+        margin-top: 10px;
 
-}
-.shifted-sidebar #sidebarToggle {
-    left: 220px;
-}
+    }
+    .shifted-sidebar #sidebarToggle {
+        left: 220px;
+    }
 
-.unshifted-sidebar #sidebarToggle {
-    left: 10px;
-}
-.shifted-content {
-    margin-left: 250px; 
-    transition: margin-left 0.3s ease; 
-}
+    .unshifted-sidebar #sidebarToggle {
+        left: 10px;
+    }
+    .shifted-content {
+        margin-left: 250px; 
+        transition: margin-left 0.3s ease; 
+    }
 </style>
 <body>
     <div class="overall">
