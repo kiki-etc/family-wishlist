@@ -30,6 +30,8 @@
     <h2>Project Description</h2>
     <p>Nyameye Akumia is developing a data powered website to help individuals in a family solve the problem of efficiently organizing items in their wishlist for the household. The current database uses a specific group of family members with a predetermined admin. (See below for email and password of the admin). This includes parents, children and any other inhabitants of the household. These users will actively engage with the platform to add items and search for items.</p>
     <p>The administrator (usually the head of the household) will also be in charge of managing and updating the database to help other students, faculty, and staff easily find and get back their lost items within the university.</p>
+    <p>Administrator Email: </p>
+    <p>Administrator Password: </p>
     <p></p>
 </section>
 <div id="middle">
