@@ -87,9 +87,24 @@ if (isset($_POST['submit_button'])) {
             exit();
         }
     } else {
-        // Provide more detailed error information for failed file upload
-        $error = error_get_last();
-        header("Location: ../view/wishlist_item_adding.php?error=Sorry, there was an error uploading your file: " . urlencode($error['message']));
+        // Provide more specific error information
+        // Check if the target directory exists
+        if (!is_dir($target_dir)) {
+            $errorMsg = "Sorry, the target directory does not exist.";
+        }
+        // Check file permissions
+        elseif (!is_writable($target_dir)) {
+            $errorMsg = "Sorry, the target directory is not writable.";
+        }
+        // General error message for other issues
+        else {
+            // Retrieve the last error message
+            $lastError = error_get_last();
+            $errorMsg = "Sorry, there was an error uploading your file. " . $lastError['message'];
+        }
+        
+        // Redirect with the error message
+        header("Location: ../view/wishlist_item_adding.php?error=" . urlencode($errorMsg));
         exit();
     }
 }
