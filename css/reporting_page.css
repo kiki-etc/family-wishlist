@@ -18,7 +18,7 @@ body {
 }
 
 .sidebar {
-    background-color: rgb(28, 64, 46);
+    background-color: #753900;
     height: 100%;
     width: 20%;
     color: #FFF8ED;
@@ -71,7 +71,7 @@ i {
 }
 
 .separator {
-    border-top: 1px solid #1c402e;
+    border-top: 1px solid #753900;
     margin: 20px 0;
 }
 
@@ -91,7 +91,7 @@ i {
 }
 
 .submit-button {
-    background-color: #1c402e;
+    background-color: #753900;
     color: white;
     padding: 15px 20px;
     border: none;
@@ -102,5 +102,5 @@ i {
 }
 
 .submit-button:hover {
-    background-color: #1c402e;
+    background-color: #753900;
 }
