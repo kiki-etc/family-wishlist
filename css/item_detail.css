@@ -15,7 +15,7 @@ body {
 
 
 .sidebar {
-    background-color: rgb(28, 64, 46);
+    background-color: #753900;
     height: 100%;
     width: 20%;
     color: #FFF8ED;
@@ -64,7 +64,7 @@ i {
     justify-content: space-between;
     align-items: center;
     padding-right: 30px;
-    color: rgb(28, 64, 46);
+    color: #753900;
     height: 65px;
 }
 

@@ -15,7 +15,7 @@ body {
 
 
 .sidebar {
-    background-color: rgb(28, 64, 46);
+    background-color: #753900;
     height: 100%;
     width: 20%;
     color: #FFF8ED;
@@ -64,7 +64,7 @@ i {
     justify-content: space-between;
     align-items: center;
     padding-right: 30px;
-    color: rgb(28, 64, 46);
+    color: #753900;
     height: 65px;
 }
 
@@ -78,7 +78,7 @@ i {
 
 .search_bar {
     width: calc(100%-200px);
-    border: 2px solid #1c402e;
+    border: 2px solid #753900;
     border-right: none;
     padding: 5px;
     height: 25px;
@@ -92,14 +92,14 @@ i {
 
 
 .search_bar:focus {
-    color: #1c402e;
+    color: #753900;
 }
 
 .search-btn {
     width: 40px;
     height: 25px;
-    border: 1px solid #1c402e;
-    background: #1c402e;
+    border: 1px solid #753900;
+    background: #753900;
     text-align: center;
     color: #fff;
     border-radius: 0 5px 5px 0;
@@ -123,14 +123,14 @@ i {
 #filterForm select,
 #filterForm input[type="text"] {
     padding: 2px;
-    border: 1px solid #1c402e;
+    border: 1px solid #753900;
     border-radius: 5px;
     font-size: 14px;
 }
 
 #filterForm #apply-filters {
     margin-left: 10px;
-    background-color: #1c402e;
+    background-color: #753900;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -140,8 +140,8 @@ i {
 
 #filterForm #apply-filters:hover {
     background-color: #fff;
-    color: #1c402e;
-    border: #1c402e 1px solid;
+    color: #753900;
+    border: #753900 1px solid;
 }
 
 .pagination {
@@ -160,7 +160,7 @@ i {
 .pages button {
     padding: 10px 20px;
     border-radius: 10px;
-    background: #1c402e;
+    background: #753900;
     color: white;
     border: none;
     cursor: pointer;
@@ -168,12 +168,12 @@ i {
 }
 
 .pages button:hover {
-    background: #1c402e;
+    background: #753900;
 }
 
 #prev-btn {
     margin-left: 15px;
-    background-color: #1c402e;
+    background-color: #753900;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -185,7 +185,7 @@ i {
 
 #next-btn {
     margin-right: 30px;
-    background-color: #1c402e;
+    background-color: #753900;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -209,7 +209,7 @@ i {
 
 .item a:hover {
     text-decoration: none;
-    color: #1c402e;
+    color: #753900;
 
 }
 
@@ -220,7 +220,7 @@ i {
 }
 
 .item {
-    border: #1c402e 1px solid;
+    border: #753900 1px solid;
     padding: 20px;
     text-align: center;
 }
