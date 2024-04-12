@@ -17,7 +17,7 @@
         </div>
         <div class="menu_top">
             <a href="../view/user_dash.php"><i class="fa-solid fa-house"></i>Dashboard</a>
-            <a href="../view/item_lost.php"> <i class="fa-solid fa-magnifying-glass"></i> Search Wishlist Items</a>
+            <a href="../view/items.php"> <i class="fa-solid fa-magnifying-glass"></i> Search Wishlist Items</a>
             <a href="../view/wishlist_item_adding.php"><i class="fa-solid fa-align-justify"></i>Add Wishlist Item</a>
             <a href="#" style="margin-top: 30px;">
                 ---------------------
