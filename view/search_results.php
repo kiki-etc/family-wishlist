@@ -105,7 +105,7 @@ include "../settings/core.php"?>
             </ul>
             <ul class="side-menu">
                 <li>
-                    <a href="#">
+                    <a href="user_profile.php">
                         <i class='bx bxs-user'></i>
                         <span class="text">Profile</span>
                     </a>
