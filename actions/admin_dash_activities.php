@@ -12,7 +12,7 @@ $query_activities = "
    SELECT CONCAT(u.fname, ' ', u.lname) AS person_name, 
        'Added an item to the wishlist' AS activity
 FROM Wishlist_Items ci
-JOIN user u ON ci.uid = u.uid
+JOIN User u ON ci.uid = u.uid
 ORDER BY item_name ASC
 LIMIT $limit OFFSET $offset;
 ";
