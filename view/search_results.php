@@ -130,7 +130,6 @@ include "../settings/core.php"?>
                         foreach ($searchResults as $result) {
                             echo "<div class='item'>";
                             echo "<h3>Item Name: " . $result["item_name"] . "</h3>";
-                            echo "<p>Location: " . $result["location"] . "</p>";
                             echo "<p>Description: " . $result["description"] . "</p>";
                             echo "</div>";
                         }
@@ -173,8 +172,6 @@ document.addEventListener("DOMContentLoaded", function() {
     
     sidebarToggle.addEventListener("click", toggleSidebar);
 });
-
-
 
 </script>
 </body>
