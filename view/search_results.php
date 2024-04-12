@@ -91,27 +91,15 @@ include "../settings/core.php"?>
                     </a>
                 </li>
                 <li>
-                    <a href="../view/item_found.php">
+                    <a href="../view/items.php">
                         <i class='bx bxs-report'></i>
-                        <span class="text">Search Found Items</span>
+                        <span class="text">Search Wishlist Items</span>
                     </a>
                 </li>
                 <li>
-                    <a href="../view/item_lost.php">
+                    <a href="../view/wishlist_item_adding.php">
                         <i class='bx bxs-report'></i>
-                        <span class="text">Search Lost Items</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="../view/founditem_reporting_page.php">
-                        <i class='bx bxs-report'></i>
-                        <span class="text">Report Found Item</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="../view/lostitem_reporting_page.php">
-                        <i class='bx bxs-report'></i>
-                        <span class="text">Report Lost Item</span>
+                        <span class="text">Add Wishlist Item</span>
                     </a>
                 </li>
             </ul>
