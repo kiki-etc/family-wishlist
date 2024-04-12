@@ -19,10 +19,8 @@ include "../settings/core.php";
         </div>
         <div class="menu_top">
             <a href="../view/user_dash.php"><i class="fa-solid fa-house"></i>Dashboard</a>
-            <a href="../view/item_lost.php"> <i class="fa-solid fa-magnifying-glass"></i> Search Lost Items</a>
-            <a href="../view/item_found.php"><i class="fa-solid fa-check"></i> Search Found Items</a>
-            <a href="../view/founditem_reporting_page.php"><i class="fa-solid fa-align-justify"></i> Report Found Item</a>
-            <a href="../view/lostitem_reporting_page.php"><i class="fa-solid fa-align-justify"></i> Report Lost Item</a>
+            <a href="../view/items.php"> <i class="fa-solid fa-magnifying-glass"></i> Search Wishlist Items</a>
+            <a href="../view/wishlist_item_adding.php"><i class="fa-solid fa-align-justify"></i>Add Wishlist Item</a>
             <a href="#" style="margin-top: 30px;">
                 ---------------------
             </a>
@@ -34,7 +32,7 @@ include "../settings/core.php";
     <div class="content">
 
         <header class="header">
-            <h1>Search Results Found</h1>
+            <h1>Search Results</h1>
         </header>
         <div class="search-results">
                <!-- Pagination Logic -->
@@ -55,8 +53,7 @@ include "../settings/core.php";
 
                foreach ($searchResults as $result) {
                    echo "<div class='item'>";
-                   echo "<h3><a href='../view/items_details_lost.php?itemid=" . $result["itemid"] . "'>" . $result["item_name"] . "</a></h3>";
-                   echo "<p>Location: " . $result["location"] . "</p>";
+                   echo "<h3><a href='../view/items_details.php?itemid=" . $result["itemid"] . "'>" . $result["item_name"] . "</a></h3>";
                    echo "<p>Description: " . $result["description"] . "</p>";
                    echo "</div>";
                }
@@ -64,10 +61,10 @@ include "../settings/core.php";
                // pagination controls
                echo "<div class='pages'>";
                if ($current_page > 1) {
-                   echo "<a href='lost_item_search_result.php?page=" . ($current_page - 1) . "&results=" . urlencode($_GET['results']) . "&total_rows=" . $total_rows . "'><button id='prev-btn'>Previous</button></a>";
+                   echo "<a href='item_search_result.php?page=" . ($current_page - 1) . "&results=" . urlencode($_GET['results']) . "&total_rows=" . $total_rows . "'><button id='prev-btn'>Previous</button></a>";
                }
                if ($current_page < $total_pages) {
-                   echo "<a href='lost_item_search_result.php?page=" . ($current_page + 1) . "&results=" . urlencode($_GET['results']) . "&total_rows=" . $total_rows . "'><button id='next-btn'>Next</button></a>";
+                   echo "<a href='item_search_result.php?page=" . ($current_page + 1) . "&results=" . urlencode($_GET['results']) . "&total_rows=" . $total_rows . "'><button id='next-btn'>Next</button></a>";
                }
                echo "</div>";
            } else {
@@ -92,9 +89,7 @@ include "../settings/core.php";
                 var statistics = JSON.parse(xhr.responseText);
                 console.log("Statistics:", statistics);
 
-                document.getElementById("found-items-count").textContent = statistics.found_items;
-                document.getElementById("lost-items-count").textContent = statistics.lost_items;
-                document.getElementById("claimed-items-count").textContent = statistics.claimed_items;
+                document.getElementById("wishlist-items-count").textContent = statistics.Wishlist_Items;
             }
         };
         xhr.send();
