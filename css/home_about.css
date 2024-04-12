@@ -5,7 +5,7 @@ body {
 }
 
 header {
-    background-color: #1C402E;
+    background-color: #753900;
     color: #FFF8ED;
     padding: 20px;
 }
@@ -48,7 +48,7 @@ section {
 
 #description {
     background-color: #FFF7ED;
-    color: #1C402E;
+    color: #753900;
 }
 
 #middle {
@@ -139,7 +139,7 @@ footer {
     top: 180%;
     width: 160%;
     height: 190%;
-    background-color: #1C402E;
+    background-color: #753900;
     border-radius: 50%;
     display: block;
     transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
@@ -148,7 +148,7 @@ footer {
   
 .button2:hover {
     color: #ffffff;
-    border: 1px solid #1C402E;
+    border: 1px solid #753900;
 }
   
 .button2:hover:before {
@@ -159,7 +159,7 @@ footer {
   
   .button2:hover:after {
     top: -45%;
-    background-color: #1C402E;
+    background-color: #753900;
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
   }
   
