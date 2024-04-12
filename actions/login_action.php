@@ -22,6 +22,10 @@ if (isset($_POST['submit_button'])) {
         exit();
     }
 
+    /* if($user_email === 'kiki.etc@icloud.com') {
+        header("Location: ../admin/admin_dash.php");
+        exit() */
+
     $sql = "SELECT * FROM User where email='$user_mail'";
 
     $result = mysqli_query($conn, $sql);
@@ -32,7 +36,7 @@ if (isset($_POST['submit_button'])) {
         if (password_verify($psswrd, $row['passwd'])) {
             $_SESSION['user_id'] = $row['uid'];
             $_SESSION['user_role'] = $row['rid'];
-            if ($_SESSION['user_role'] === 1) {
+            if ($_SESSION['user_role'] == 1) {
                 header("Location: ../admin/admin_dash.php");
                 exit();
             } else {

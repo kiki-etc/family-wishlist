@@ -185,6 +185,9 @@ ALTER TABLE `Wishlist_Items`
 ALTER TABLE `User`
   ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`rid`) REFERENCES `Role` (`rid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
+INSERT INTO `User` (`rid`, `fname`, `lname`, `gender`, `tel`, `email`, `passwd`) VALUES (1, 'Nyameye', 'Akumia', 'Other', '0556036295', 'kiki.etc@icloud.com', '$2y$10$DTkowH8nMqwBuC3n.EhmROENY2KB.lNPsFYfxZU15h/uF8rDJLtu6');
+
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

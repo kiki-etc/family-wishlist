@@ -38,11 +38,7 @@ else{?><!DOCTYPE html>
         </header>
             <p><strong>First Name:</strong> <?php echo $userData['fname']; ?></p>
             <p><strong>Last Name:</strong> <?php echo $userData['lname']; ?></p>
-            <p><strong>Gender:</strong> <?php 
-                echo ($userData['gender'] == 'Male') ? 'Male' : 
-                ($userData['gender'] == 'Female') ? 'Female' : 
-                'Other'; 
-            ?></p>
+            <p><strong>Gender:</strong> <?php echo $userData['gender']; ?></p>
 
             <p><strong>Telephone:</strong> <?php echo $userData['tel']; ?></p>
             <p><strong>Email:</strong> <?php echo $userData['email']; ?></p>
