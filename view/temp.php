@@ -156,11 +156,8 @@ include "../settings/core.php"?>
                         echo '<img src="../uploads/' . $itemDetails['file_name'] . '" alt="Item Image" style="max-width: 300px;">'; // Display the image
                         echo '<p><strong>Item Name:</strong> ' . $itemDetails['item_name'] . '</p>';
                         echo '<p><strong>Description:</strong> ' . $itemDetails['description'] . '</p>';
-                        echo '<p><strong>Interaction Time:</strong> ' . $itemDetails['interaction_time'] . '</p>';
-                        echo '<p><strong>Location</strong> ' . $itemDetails['location'] . '</p>';
                         
                         echo '<p><strong>Category:</strong> ' . $itemDetails['category'] . '</p>';
-                        echo '<p><strong>Status</strong> ' . $itemDetails['status'] . '</p>';
                         echo '<p><strong>Status</strong> ' . $itemDetails['status'] . '</p>';
                     } else {
                         echo '<p>No item found with the provided ID.</p>';
