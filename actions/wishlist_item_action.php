@@ -63,7 +63,8 @@ if (isset($_POST['submit_button'])) {
                 $count_items = mysqli_num_rows($result2);
 
                 if ($count_items == 0) {
-                    $sql3 = "INSERT INTO Wishlist_Items(rid,sid,image_id,item_name,description,uid,category,uid) VALUES('$userrole',1,'$image_id' ,'$itemName','$itemDescription','$category','$userid')";
+                    $sql3 = "INSERT INTO Wishlist_Items (rid, sid, image_id, item_name, description, category, uid) VALUES ($userrole, 2, $image_id, $itemName, $itemDescription, $category, $userid)";
+
                     $result3 = mysqli_query($conn, $sql3);
 
                     if ($result3) {
