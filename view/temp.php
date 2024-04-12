@@ -11,7 +11,6 @@ include "../settings/core.php"?>
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <title>Items Details</title>
     <link rel="stylesheet" href="../css/items_display.css">
- 
 </head>
 <style>
          /* Previous and Next Buttons */
@@ -55,48 +54,44 @@ include "../settings/core.php"?>
     background-color: #fff;
     transition: left 0.3s ease;
     z-index: 1000; 
-}
+    }
 
-#sidebarToggle {
-    position: fixed;
-    top: 10px;
-    left: 220px;
-    z-index: 1001; 
-}
+    #sidebarToggle {
+        position: fixed;
+        top: 10px;
+        left: 220px;
+        z-index: 1001; 
+    }
 
-.side-menu li {
-    margin-bottom: 10px;
-    margin-top: 10px;
+    .side-menu li {
+        margin-bottom: 10px;
+        margin-top: 10px;
 
-}
+    }
 
-/* #sidebar .side-menu li.active {
-    background: var(--grey);
-    position: relative;
-} */
+    /* #sidebar .side-menu li.active {
+        background: var(--grey);
+        position: relative;
+    } */
 
-.shifted-sidebar #sidebarToggle {
-    left: 220px;
-}
+    .shifted-sidebar #sidebarToggle {
+        left: 220px;
+    }
 
-.unshifted-sidebar #sidebarToggle {
-    left: 10px;
-}
-.shifted-content {
-    margin-left: 250px; 
-    transition: margin-left 0.3s ease; 
-}
-
-
+    .unshifted-sidebar #sidebarToggle {
+        left: 10px;
+    }
+    .shifted-content {
+        margin-left: 250px; 
+        transition: margin-left 0.3s ease; 
+    }
 </style>
 <body>
-
     <div class="overall">
        <button id="sidebarToggle"><i class="material-icons">menu</i></button>
 
         <div id="sidebar">
 
-        
         <a href="../view/user_dash.php" class="brand">
             <img src="../images/logo.png" height="64px" alt="">
         </a>
@@ -107,32 +102,19 @@ include "../settings/core.php"?>
             <span class="text">Dashboard</span>
         </a>
     </li>
-    <li id="searchFoundItemsMenuItem" > 
-        <a href="../view/item_found.php">
-            <i class='bx bxs-report'></i>
-            <span class="text">Search Found Items</span>
-        </a>
-    </li>
     <li id="searchLostItemsMenuItem" >
-        <a href="../view/item_lost.php">
+        <a href="../view/items.php">
             <i class='bx bxs-report'></i>
-            <span class="text">Search Lost Items</span>
-        </a>
-    </li>
-    <li id="reportFoundItemMenuItem" >
-        <a href="../view/founditem_reporting_page.php">
-            <i class='bx bxs-report'></i>
-            <span class="text">Report Found Item</span>
+            <span class="text">Search Wishlist Items</span>
         </a>
     </li>
     <li id="reportLostItemMenuItem" >
-        <a href="../view/lostitem_reporting_page.php">
+        <a href="../view/wishlist_item_adding.php">
             <i class='bx bxs-report'></i>
-            <span class="text">Report Lost Item</span>
+            <span class="text">Add Wishlist Item</span>
         </a>
     </li>
 </ul>
-
         <ul class="side-menu">
             <li>
                 <a href="#">
