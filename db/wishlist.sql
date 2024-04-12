@@ -44,8 +44,9 @@ CREATE TABLE `Wishlist_Items` (
   `sid` int(11) NOT NULL, -- status id
   `image_id` int(11) NOT NULL, -- image id
   `item_name` varchar(100) NOT NULL,
-  `description` TEXT
-  `category` varchar(100) NOT NULL
+  `description` TEXT,
+  `category` varchar(100) NOT NULL,
+  `uid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

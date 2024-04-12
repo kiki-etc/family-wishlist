@@ -8,8 +8,6 @@ if (isset($_POST['submit_button'])) {
     $itemDescription = mysqli_real_escape_string($conn, $_POST['itemDescription']);
     $userrole = $_SESSION['user_role'];
     $userid = $_SESSION['user_id'];
-    $time = $_POST['time'];
-    $date = $_POST['date'];
 
     if ($_FILES['photo']['size'] == 0) {
         header("Location: ../view/wishlist_item_adding.php?error=Image file is required");
@@ -49,7 +47,7 @@ if (isset($_POST['submit_button'])) {
         if (move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file)) {
             $file_Size = $_FILES["photo"]["size"];
 
-            $sql = "INSERT INTO image (file_name, file_size, file_type) VALUES ('$target_file', '$file_Size', '$imageFileType')";
+            $sql = "INSERT INTO image (file_name, file_size, file_type) VALUES ('$target_file', '$file_Size', '$imageFileType','$userid')";
             $result = mysqli_query($conn, $sql);
 
             if ($result) {
@@ -65,11 +63,11 @@ if (isset($_POST['submit_button'])) {
                 $count_items = mysqli_num_rows($result2);
 
                 if ($count_items == 0) {
-                    $sql3 = "INSERT INTO Wishlist_Items(rid,sid,image_id,item_name,description,uid,category) VALUES('$userrole',1,'$image_id' ,'$itemName','$itemDescription','$userid','$category')";
+                    $sql3 = "INSERT INTO Wishlist_Items(rid,sid,image_id,item_name,description,uid,category,uid) VALUES('$userrole',1,'$image_id' ,'$itemName','$itemDescription','$category','$userid')";
                     $result3 = mysqli_query($conn, $sql3);
 
                     if ($result3) {
-                        header("Location: ../view/item_lost.php");
+                        header("Location: ../view/items.php");
                     }
                 } else {
                     if ($count_items > 0) {

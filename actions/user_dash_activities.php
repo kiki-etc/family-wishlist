@@ -23,29 +23,12 @@ if (isset($_SESSION['user_id'])) {
 
     
     $query_activities = "
-       SELECT CONCAT(u.fname, ' ', u.lname) AS person_name, 
-           li.interaction_time AS interaction_date, 
-           'Reported a lost item' AS activity
-    FROM lost_items li
+    SELECT CONCAT(u.fname, ' ', u.lname) AS person_name,  
+        'Added a Wishlist Item' AS activity 
+    FROM Wishlist_Items li
     JOIN user u ON li.uid = u.uid
     WHERE u.uid = $user_id
-    UNION ALL
-    SELECT CONCAT(u.fname, ' ', u.lname) AS person_name, 
-           fi.interaction_time AS interaction_date, 
-           'Found a lost item' AS activity
-    FROM found_items fi
-    JOIN user u ON fi.uid = u.uid
-    WHERE u.uid = $user_id
-    UNION ALL
-    SELECT CONCAT(u.fname, ' ', u.lname) AS person_name, 
-           ci.interaction_time AS interaction_date, 
-           'Claimed a found item' AS activity
-    FROM claimed_items ci
-    JOIN user u ON ci.uid = u.uid
-    WHERE u.uid = $user_id
-    ORDER BY interaction_date DESC
-    LIMIT $limit OFFSET $offset;
-    ";
+    UNION ALL";
 
 
     $result = mysqli_query($conn, $query_activities);

@@ -6,12 +6,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> Signup</title>
-    <link rel="stylesheet" href="../css/signup_style.css" />
+    <link rel="stylesheet" href="../css/login_style.css" />
 </head>
+<style>
+.radio {
+    height: 60px;
+    width: 100%;
+    padding: 10px 15px 0;
+    font-size: 17px;
+    margin-bottom: 1.3rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+}
 
+
+.radio-container {
+    display: inline;
+    align-items: center;
+}
+
+
+
+.radio-container input[type="radio"] {
+    appearance: none;
+    display: inline;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #753900;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+    padding-bottom: 5px;
+}
+
+.radio-container input[type="radio"]:checked::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #753900;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.radio-container label {
+    color: gray;
+    font-size: 16px;
+}
+
+.radio-container label:hover {
+    cursor: pointer;
+}
+</style>
 <body>
     <div class="container">
-        <div class="registration form">
+        <div class="login form">
             <header>Signup</header>
             <form action="../actions/signup_action.php" method="post">
                 <?php

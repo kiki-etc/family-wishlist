@@ -57,7 +57,7 @@ $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
 $offset = ($current_page - 1) * $limit;
 
 // Retrieve found items with sorting, filtering, and pagination
-$lostItems = getLostItems($conn, $limit, $offset, $sortBy, $itemType);
+$WishlistItems = getLostItems($conn, $limit, $offset, $sortBy, $itemType);
 
 // Encode the found items as JSON and echo the result
 echo json_encode($WishlistItems);
