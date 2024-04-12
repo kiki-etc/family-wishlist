@@ -23,12 +23,13 @@ if (isset($_SESSION['user_id'])) {
 
     
     $query_activities = "
-    SELECT CONCAT(u.fname, ' ', u.lname) AS person_name,  
-        'Added a Wishlist Item' AS activity 
-    FROM Wishlist_Items li
-    JOIN user u ON li.uid = u.uid
-    WHERE u.uid = $user_id
-    UNION ALL";
+    SELECT CONCAT(u.fname, ' ', u.lname) AS person_name, 
+       'Added an item to the wishlist' AS activity
+    FROM Wishlist_Items ci
+    JOIN user u ON ci.uid = u.uid
+    ORDER BY item_name ASC
+    LIMIT $limit OFFSET $offset;
+    ";
 
 
     $result = mysqli_query($conn, $query_activities);
