@@ -13,7 +13,7 @@ function getItemDetails($conn, $itemid) {
     // Query to fetch the details of the item based on itemid
     $sql = "SELECT l.*, i.file_name, s.sname
             FROM Wishlist_items l
-            INNER JOIN image i ON l.image_id = i.image_id
+            INNER JOIN Image i ON l.image_id = i.image_id
             INNER JOIN Status s ON l.sid = s.sid
             WHERE l.itemid = $itemid";
     $result = mysqli_query($conn, $sql);

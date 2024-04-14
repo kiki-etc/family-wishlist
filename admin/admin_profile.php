@@ -23,6 +23,7 @@ else{?><!DOCTYPE html>
         <div class="menu_top">
             <a href="../admin/admin_dash.php"><i class="fa-solid fa-house"></i>Dashboard</a>
             <a href="../admin/all_wishlist_items.php"> <i class="fa-solid fa-magnifying-glass"></i> All Wishlist Items</a>
+            <a href="../admin/wishlist_item_adding.php"> <i class="fa-solid fa-magnifying-glass"></i> Add Wishlist Item</a>
             <a href="<?php echo $mailto_link; ?>"><i class="fa-solid fa-envelope"></i> Send Weekly Mail</a>
             <a href="#" style="margin-top: 30px;">
                 ---------------------

@@ -11,17 +11,72 @@ else{
     <title>All Wishlist Items</title>
     <link rel="stylesheet" href="../css/items_display.css">
 </head>
+<style>
+/* Styling for the outer container */
+.items {
+    display: flex; /* Use flex layout */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    gap: 20px; /* Space between grid items */
+    padding: 20px; /* Padding inside the container */
+}
 
+/* Styling for each item card */
+.item-card {
+    flex: 0 0 30%; /* Set width of each card to 30% of the container */
+    aspect-ratio: 4 / 5; /* Maintain an aspect ratio of 4:5 */
+    border: 1px solid #753900; 
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fff;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Hover effect for item cards */
+.item-card:hover {
+    transform: translateY(-5px); /* Move card up slightly on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Styling for images inside the item card */
+.item-image {
+    width: 95%; /* Full width of the card */
+    height: auto;
+    /* object-fit: cover; Ensure the image covers the available space */
+    border-bottom: 1px solid #753900; /* Separate image from text */
+    padding-bottom: 5px; 
+    margin-bottom: 5px; 
+}
+
+.item-name,
+.item-description,
+.item-category,
+.item-status {
+    margin: 5px 0; /* Margin around text */
+}
+
+.item-name {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.item-description,
+.item-category,
+.item-status {
+    font-size: 1em;
+    color: #000;
+}
+</style>
 <body>
     <div class="sidebar">
         <div class="sidebar_logo">
-            <a href="../admin/admin_dash.php">
+            <a href="../view/home_about.php">
                 <img id="logo" src="../images/logo.png"> </a>
         </div>
         <div class="menu_top">
             <a href="../admin/admin_dash.php"><i class="fa-solid fa-house"></i>Dashboard</a>
-            <a href="../admin/all_wishlist_items.php"> <i class="fa-solid fa-magnifying-glass"></i>All Wishlist Items</a>
-            <a href="<?php echo $mailto_link; ?>"><i class="fa-solid fa-envelope"></i>Send Weekly Mail</a>
+            <a href="../admin/all_wishlist_items.php"> <i class="fa-solid fa-magnifying-glass"></i> All Wishlist Items</a>
+            <a href="../admin/wishlist_item_adding.php"> <i class="fa-solid fa-magnifying-glass"></i> Add Wishlist Item</a>
+            <a href="<?php echo $mailto_link; ?>"><i class="fa-solid fa-envelope"></i> Send Weekly Mail</a>
             <a href="#" style="margin-top: 30px;">
                 ---------------------
             </a>
@@ -68,13 +123,72 @@ else{
 
         
         <div class="items">
-
             <div class="lost">
-                <?php
-                    include "../actions/retrieve_item.php";
-                    ?>
+            <?php
+            // Include retrieve_item.php file to fetch the Wishlist items
+            include "../actions/retrieve_item.php";
+
+            // Check if there are Wishlist items to display
+            if (!empty($WishlistItems)) {
+                // Loop through the Wishlist items array
+                foreach ($WishlistItems as $item) {
+                    // Create a card for each Wishlist item
+                    echo '<div class="item-card">';
+
+                    // Display the item image
+                    // The image source is based on the file path stored in the database, which includes the file name
+                    echo '<img src="../uploads/' . basename($item['image_file_name']) . '" alt="' . $item['item_name'] . '" class="item-image">';
+
+                    // Display the item name
+                    echo '<h3 class="item-name">' . htmlspecialchars($item['item_name']) . '</h3>';
+
+                    // Display the item description
+                    echo '<p class="item-description">' . nl2br(htmlspecialchars($item['description'])) . '</p>';
+
+                    // Display the item category
+                    echo '<p class="item-category">Category: ' . htmlspecialchars($item['category']) . '</p>';
+
+                    // Display the item status
+                    echo '<p class="item-status">Status: ' . htmlspecialchars($item['status_name']) . '</p>';
+
+                    
+                            // Add form for updating the status of the Wishlist item
+                        echo '<form action="../actions/update_status_action.php" method="POST" class="status-update-form">';
+                        // Hidden input to store the item's ID
+                        echo '<input type="hidden" name="itemid" value="' . htmlspecialchars($item['itemid']) . '">';
+
+                        // Dropdown for selecting the new status
+                        echo '<label for="status">Status:</label>';
+                        echo '<select name="status" id="status">';
+                        // Query to fetch all statuses from the Status table
+                        $statuses = mysqli_query($conn, "SELECT * FROM Status");
+                        // Loop through statuses and create option elements
+                        while ($status = mysqli_fetch_assoc($statuses)) {
+                            echo '<option value="' . htmlspecialchars($status['sid']) . '">' . htmlspecialchars($status['sname']) . '</option>';
+                        }
+                        echo '</select>';
+
+                        // Submit button
+                        echo '<button type="submit" class="cssbuttons-io-button-update">Update Status</button>';
+                        echo '</form>';
+                    // Add more item properties as needed
+                    // Add delete button for each item
+                        echo '<form action="../actions/delete_item_action.php" method="POST" class="delete-form">';
+                        echo '<input type="hidden" name="id" value="' . htmlspecialchars($item['itemid']) . '">';
+                        echo '<button type="submit" class="cssbuttons-io-button-delete">Delete</button>';
+                        echo '</form>';
+                        
+                            
+                    echo '</div>'; // Close the item card
+                }
+            } else {
+                // Display a message if no items are found
+                echo '<p>No Wishlist items found.</p>';
+            }
+            ?>
             </div>
         </div>
+
         <div class="pages">
             <button id="prev-btn">Previous</button>
             <button id="next-btn">Next</button>

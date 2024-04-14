@@ -1,9 +1,9 @@
 <?php
 
-$SERVER = "localhost";
-$USERNAME = "root";
-$PSSWRD = "";
-$DATABASE = "Wishlist";
+$SERVER = "fdb1034.awardspace.net";
+$USERNAME = "4471370_wishlist";
+$PSSWRD = "WebTech2024!";
+$DATABASE = "4471370_wishlist";
 
 $conn = new mysqli($SERVER, $USERNAME, $PSSWRD, $DATABASE);
 

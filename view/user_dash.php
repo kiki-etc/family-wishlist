@@ -1,6 +1,8 @@
-<!-- user_dash.php -->
 <?php  
 include "../settings/core.php";
+include "../actions/send_email.php";
+ if ($_SESSION['user_role'] != 1)  {header("Location: ../view/user_dash.php");}
+ else{
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -110,4 +112,4 @@ include "../settings/core.php";
     </script>
 </body>
 
-</html>
+</html><?php }?>

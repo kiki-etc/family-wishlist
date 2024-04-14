@@ -142,6 +142,13 @@ ALTER TABLE `Status`
 --
 
 --
+-- AUTO_INCREMENT for table `Image`
+--
+ALTER TABLE `Image`
+	MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT;
+
+
+--
 -- AUTO_INCREMENT for table `Wishlist_Items`
 --
 ALTER TABLE `Wishlist_Items`

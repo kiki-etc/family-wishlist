@@ -47,15 +47,15 @@ if (isset($_POST['submit_button'])) {
     }
 
     // Check file size limit
-    if ($_FILES["photo"]["size"] > 5000000) { // Example limit of 5MB
-        header("Location: ../view/wishlist_item_adding.php?error=Sorry, your file is too large. Maximum size allowed is 5MB.");
+    if ($_FILES["photo"]["size"] > 10000000) { // Example limit of 10MB
+        header("Location: ../view/wishlist_item_adding.php?error=Sorry, your file is too large. Maximum size allowed is 10MB.");
         exit();
     }
 
     // Move the uploaded file to the target directory
     if (move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file)) {
         // Insert file details into the image table
-        $sql = "INSERT INTO image (file_name, file_size, file_type, upload_date) VALUES ('$target_file', '{$_FILES["photo"]["size"]}', '$imageFileType', CURRENT_TIMESTAMP)";
+        $sql = "INSERT INTO Image (file_name, file_size, file_type, upload_date) VALUES ('$target_file', '{$_FILES["photo"]["size"]}', '$imageFileType', CURRENT_TIMESTAMP)";
         $result = mysqli_query($conn, $sql);
 
         if ($result) {
@@ -76,15 +76,28 @@ if (isset($_POST['submit_button'])) {
             $result3 = mysqli_query($conn, $sql3);
 
             if ($result3) {
-                header("Location: ../view/items.php");
-                exit();
+                if ($userrole == 1) {
+                    header("Location: ../admin/all_wishlist_items.php");
+                    exit();
+                } else {
+                	header("Location: ../view/items.php");
+                    exit();}
             } else {
-                header("Location: ../view/wishlist_item_adding.php?error=Failed to add item to wishlist.");
+                
                 exit();
+                if ($userrole == 1) {
+                    header("Location: ../admin/wishlist_item_adding.php?error=Failed to add item to wishlist.");
+                    exit();
+                } else {
+                	header("Location: ../view/wishlist_item_adding.php?error=Failed to add item to wishlist.");
+                	exit();}
             }
         } else {
-            header("Location: ../view/wishlist_item_adding.php?error=Failed to insert file details into database.");
-            exit();
+            if ($userrole == 1) {
+            	header("Location: ../admin/wishlist_item_adding.php?error=Failed to insert file details into database.");
+            	exit();} else {
+                header("Location: ../view/wishlist_item_adding.php?error=Failed to insert file details into database.");
+            	exit();}
         }
     } else {
         // Provide more specific error information

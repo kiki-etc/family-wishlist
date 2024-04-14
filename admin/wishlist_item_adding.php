@@ -1,5 +1,8 @@
-<?php
+<?php  
 include "../settings/core.php";
+include "../actions/send_email.php";
+ if ($_SESSION['user_role'] != 1)  {header("Location: ../view/user_dash.php");}
+ else{
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,9 +28,10 @@ include "../settings/core.php";
                 <img id="logo" src="../images/logo.png"> </a>
         </div>
         <div class="menu_top">
-            <a href="../view/user_dash.php"><i class="fa-solid fa-house"></i>Dashboard</a>
-            <a href="../view/item_lost.php"> <i class="fa-solid fa-magnifying-glass"></i> Search Wishlist Items</a>
-            <a href="../view/wishlist_item_adding.php"><i class="fa-solid fa-align-justify"></i> Add Wishlist Item</a>
+            <a href="../admin/admin_dash.php"><i class="fa-solid fa-house"></i>Dashboard</a>
+            <a href="../admin/all_wishlist_items.php"> <i class="fa-solid fa-magnifying-glass"></i> All Wishlist Items</a>
+            <a href="../admin/wishlist_item_adding.php"> <i class="fa-solid fa-magnifying-glass"></i> Add Wishlist Item</a>
+            <a href="<?php echo $mailto_link; ?>"><i class="fa-solid fa-envelope"></i> Send Weekly Mail</a>
             <a href="#" style="margin-top: 30px;">
                 ---------------------
             </a>
@@ -70,4 +74,4 @@ include "../settings/core.php";
 
 </body>
 
-</html>
+</html><?php }?>

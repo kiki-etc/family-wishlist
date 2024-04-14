@@ -4,7 +4,7 @@ if (isset($_SESSION['user_id'])) {
 
     $uid = $_SESSION['user_id'];
 
-    $sql = "SELECT * FROM `user` WHERE `uid` = '$uid'";
+    $sql = "SELECT * FROM `User` WHERE `uid` = '$uid'";
     $result = mysqli_query($conn, $sql); 
 
     $userData = mysqli_fetch_assoc($result);

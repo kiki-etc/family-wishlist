@@ -96,7 +96,7 @@
                 <?php
                 include "../settings/connection.php";
 
-                $sql = "SELECT * FROM role ORDER BY rid ASC";
+                $sql = "SELECT * FROM Role ORDER BY rid ASC";
                 $result = mysqli_query($conn, $sql);
 
                 if ($result->num_rows > 0) {
